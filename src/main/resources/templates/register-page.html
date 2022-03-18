@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+</head>
+<body>
+ <form th:action="@{/api/customer/save}" method="post" th:object="${Customer}">
+     <input type="hidden" th:field="*{id}" id="id">
+     <label for="fname">First Name</label>
+     <input type="text" name="firstName" id="fname" th:field="*{firstName}">
+     <br><br>
+     <label for="lname">Last Name</label>
+     <input type="text" name="lastName" id="lname" th:field="*{lastName}">
+     <br><br>
+     <label for="username">User Name</label>
+     <input type="text" name="username" id="username" th:field="*{username}">
+     <br><br>
+     <label for="password">Password</label>
+     <input type="password" name="password" id="password" th:field="*{password}">
+     <br><br>
+     <label for="date">Date</label>
+     <input type="date" name="date" id="date" th:field="*{dob}">
+     <br><br>
+     <label for="address">Address</label>
+     <input type="text" name="address" id="address" th:field="*{address}">
+     <br><br>
+     <label for="email">Email</label>
+     <input type="email" name="email" id="email" th:field="*{email}">
+     <br><br>
+     <label for="phone">Phone</label>
+     <input type="text" name="phone" id="phone" th:field="*{phone}">
+     <br><br>
+     <label for="country">Country</label>
+     <input type="text" name="country" id="country" th:field="*{country}">
+     <br><br>
+     <input type="submit" value="Register">
+ </form>
+</body>
+</html>
