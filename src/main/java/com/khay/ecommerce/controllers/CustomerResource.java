@@ -1,11 +1,10 @@
 package com.khay.ecommerce.controllers;
 
-import com.khay.ecommerce.models.Customer;
-import com.khay.ecommerce.models.Role;
+import com.khay.ecommerce.models.Customer.Customer;
+import com.khay.ecommerce.models.Customer.Role;
 import com.khay.ecommerce.repository.CustomerRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
