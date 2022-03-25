@@ -1,5 +1,6 @@
 package com.khay.ecommerce.models.Customer;
 
+//import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,9 +12,9 @@ import java.time.LocalDate;
 
 @Entity
 @Data
-@Table(name = "customers")
 @NoArgsConstructor
 @AllArgsConstructor
+//@JsonIgnoreProperties("role")
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,7 +30,6 @@ public class Customer {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate dob;
 
-
     @Enumerated(EnumType.STRING)
     private Role role;
 
@@ -40,18 +40,4 @@ public class Customer {
     private String phone;
 
     private String country;
-
-    public Customer(String firstName, String lastName, String username,
-                    String password, LocalDate dob, Role role, String address, String email, String phone, String country) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.username = username;
-        this.password = password;
-        this.dob = dob;
-        this.role = role;
-        this.address = address;
-        this.email = email;
-        this.phone = phone;
-        this.country = country;
-    }
 }

@@ -1,13 +1,11 @@
 package com.khay.ecommerce.models.Product;
 
+import com.khay.ecommerce.models.Category.Category;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 @Data
@@ -20,5 +18,11 @@ public class Product {
     private String name;
     private int quantity;
     private String description;
-    
+    private Double price;
+
+    @ManyToOne
+    private Category category;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    private ProductImage imageContent;
 }

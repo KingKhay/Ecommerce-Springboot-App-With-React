@@ -1,4 +1,4 @@
-package com.khay.ecommerce.services;
+package com.khay.ecommerce.services.CustomerServices;
 
 import com.khay.ecommerce.models.Customer.Customer;
 import com.khay.ecommerce.models.Customer.CustomerUserDetails;
