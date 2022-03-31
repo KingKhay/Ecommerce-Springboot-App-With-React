@@ -1,6 +1,6 @@
-package com.khay.ecommerce.models.Product;
+package com.khay.ecommerce.domain.Product;
 
-import com.khay.ecommerce.models.Category.Category;
+import com.khay.ecommerce.domain.Category.Category;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

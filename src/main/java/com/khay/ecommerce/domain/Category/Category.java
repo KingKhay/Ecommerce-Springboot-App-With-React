@@ -1,6 +1,6 @@
-package com.khay.ecommerce.models.Category;
+package com.khay.ecommerce.domain.Category;
 
-import com.khay.ecommerce.models.Product.Product;
+import com.khay.ecommerce.domain.Product.Product;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,7 +17,7 @@ public class Category {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(unique = true,nullable = false)
+    @Column(nullable = false)
     private String name;
 
     public Category(String name) {

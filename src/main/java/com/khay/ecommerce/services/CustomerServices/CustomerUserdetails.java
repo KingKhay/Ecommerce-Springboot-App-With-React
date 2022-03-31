@@ -1,30 +1,28 @@
-package com.khay.ecommerce.models.Customer;
+package com.khay.ecommerce.services.CustomerServices;
 
+import com.khay.ecommerce.domain.Customer.Customer;
+import com.khay.ecommerce.domain.Customer.Role;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
-
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.stream.Collectors;
 
+public class CustomerUserdetails implements UserDetails{
 
+    private String username;
+    private String password;
+    private List<GrantedAuthority> authorities;
 
-public class CustomerUserDetails extends Customer implements UserDetails {
-
-    private final String username;
-    private final String password;
-    private final List<GrantedAuthority> authorities;
-
-
-    public CustomerUserDetails(Customer customer){
+    public CustomerUserdetails(Customer customer) {
         this.username = customer.getUsername();
         this.password = customer.getPassword();
-        SimpleGrantedAuthority role = new SimpleGrantedAuthority(customer.getRole().name());
-        List<GrantedAuthority> listOfAuthorities = new ArrayList<>();
-        listOfAuthorities.add(role);
-        this.authorities = listOfAuthorities;
+        List<String> roles = customer.getRoles().stream().map(Role::getName).collect(Collectors.toList());
+        this.authorities = roles.stream().map(SimpleGrantedAuthority::new).collect(Collectors.toList());
     }
 
     @Override

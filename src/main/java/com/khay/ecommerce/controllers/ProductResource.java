@@ -1,8 +1,8 @@
 package com.khay.ecommerce.controllers;
 
-import com.khay.ecommerce.models.Category.Category;
-import com.khay.ecommerce.models.Product.Product;
-import com.khay.ecommerce.models.Product.ProductImage;
+import com.khay.ecommerce.domain.Category.Category;
+import com.khay.ecommerce.domain.Product.Product;
+import com.khay.ecommerce.domain.Product.ProductImage;
 import com.khay.ecommerce.services.CategoryServices.CategoryService;
 import com.khay.ecommerce.services.ProductServices.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +25,7 @@ public class ProductResource {
         this.service = service;
     }
 
+    @CrossOrigin
     @GetMapping("/product")
     public Iterable<Product> getAllProducts(){
         return service.getProducts();

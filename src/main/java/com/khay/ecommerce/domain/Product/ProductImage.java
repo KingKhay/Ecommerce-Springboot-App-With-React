@@ -1,4 +1,4 @@
-package com.khay.ecommerce.models.Product;
+package com.khay.ecommerce.domain.Product;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

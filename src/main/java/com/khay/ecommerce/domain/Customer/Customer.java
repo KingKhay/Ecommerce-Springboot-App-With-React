@@ -1,37 +1,40 @@
-package com.khay.ecommerce.models.Customer;
+package com.khay.ecommerce.domain.Customer;
 
-//import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
+
+import static javax.persistence.FetchType.EAGER;
 
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-//@JsonIgnoreProperties("role")
 public class Customer {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    @NonNull
+    private String username;
 
     private String firstName;
 
     private String lastName;
 
-    private String username;
+    @NonNull
     private String password;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate dob;
 
-    @Enumerated(EnumType.STRING)
-    private Role role;
+    @ManyToMany(fetch = EAGER)
+    private List<Role> roles;
 
     private String address;
 

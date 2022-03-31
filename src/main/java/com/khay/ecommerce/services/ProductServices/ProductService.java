@@ -1,6 +1,6 @@
 package com.khay.ecommerce.services.ProductServices;
 
-import com.khay.ecommerce.models.Product.Product;
+import com.khay.ecommerce.domain.Product.Product;
 
 
 public interface ProductService {

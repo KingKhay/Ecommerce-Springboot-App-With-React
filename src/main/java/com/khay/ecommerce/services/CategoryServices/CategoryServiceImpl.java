@@ -1,7 +1,7 @@
 package com.khay.ecommerce.services.CategoryServices;
 
-import com.khay.ecommerce.models.Category.Category;
-import com.khay.ecommerce.models.Product.Product;
+import com.khay.ecommerce.domain.Category.Category;
+import com.khay.ecommerce.domain.Product.Product;
 import com.khay.ecommerce.repository.CategoryRepository;
 import com.khay.ecommerce.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
